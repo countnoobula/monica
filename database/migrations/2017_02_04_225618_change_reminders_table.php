@@ -15,7 +15,8 @@ class ChangeRemindersTable extends Migration
     {
         Schema::table('reminders', function (Blueprint $table) {
             $table->dropColumn(
-                'deleted_at', 'people_id'
+                'deleted_at',
+                'people_id'
             );
         });
 

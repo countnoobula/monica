@@ -127,14 +127,13 @@ class ExportAccountAsSQL
         // Specific to `accounts` table
         $accounts = array_filter($tables, function ($e) {
             return $e->table_name == 'accounts';
-        }
-        )[0];
+        })[0];
         $tableName = $accounts->table_name;
         $tableData = DB::table($tableName)->get()->toArray();
         foreach ($tableData as $data) {
             $newSQLLine = 'INSERT INTO '.$tableName.' VALUES (';
             $data = (array) $data;
-            if ($data['id'] === $account->id):
+            if ($data['id'] === $account->id) :
                 $values = [
                     $data['id'],
                     "'".addslashes($data['api_key'])."'",
@@ -142,8 +141,8 @@ class ExportAccountAsSQL
                         ? $data['number_of_invitations_sent']
                         : 'NULL',
                 ];
-            $newSQLLine .= implode(',', $values).');'.PHP_EOL;
-            $sql .= $newSQLLine;
+                $newSQLLine .= implode(',', $values).');'.PHP_EOL;
+                $sql .= $newSQLLine;
             endif;
         }
 

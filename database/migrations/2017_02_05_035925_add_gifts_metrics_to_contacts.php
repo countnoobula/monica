@@ -29,7 +29,9 @@ class AddGiftsMetricsToContacts extends Migration
     {
         Schema::table('contacts', function (Blueprint $table) {
             $table->dropColumn(
-                'number_of_gifts_ideas', 'number_of_gifts_received', 'number_of_gifts_offered'
+                'number_of_gifts_ideas',
+                'number_of_gifts_received',
+                'number_of_gifts_offered'
             );
         });
     }

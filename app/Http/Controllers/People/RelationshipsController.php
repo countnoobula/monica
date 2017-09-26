@@ -145,8 +145,7 @@ class RelationshipsController extends Controller
         if ($request->get('realContact')) {
             $partner->update([
                 'is_significant_other' => 0,
-                ]
-            );
+                ]);
 
             $contact->updateRelationshipWith($partner);
         }
