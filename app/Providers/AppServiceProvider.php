@@ -17,12 +17,12 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer(
             'partials.components.country-select',
-            'App\Http\ViewComposers\CountrySelectViewComposer'
+            \App\Http\ViewComposers\CountrySelectViewComposer::class
         );
 
         View::composer(
             'partials.components.currency-select',
-            'App\Http\ViewComposers\CurrencySelectViewComposer'
+            \App\Http\ViewComposers\CurrencySelectViewComposer::class
         );
     }
 

@@ -18,7 +18,7 @@ class Tag extends Model
      */
     public function account()
     {
-        return $this->belongsTo('App\Account');
+        return $this->belongsTo(\App\Account::class);
     }
 
     /**
@@ -26,6 +26,6 @@ class Tag extends Model
      */
     public function contacts()
     {
-        return $this->belongsToMany('App\Contact')->withPivot('account_id')->withTimestamps();
+        return $this->belongsToMany(\App\Contact::class)->withPivot('account_id')->withTimestamps();
     }
 }

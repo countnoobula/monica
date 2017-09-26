@@ -12,7 +12,7 @@ class SearchTest extends TestCase
     /** @test */
     public function testSearchContactsReturnsCollection()
     {
-        $contact = factory('App\Contact')->make();
+        $contact = factory(\App\Contact::class)->make();
         $searchResults = $contact->search($contact->first_name, $contact->account_id);
 
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $searchResults);
@@ -21,7 +21,7 @@ class SearchTest extends TestCase
     /** @test */
     public function testSearchContactsThroughFirstNameAndResultContainsContact()
     {
-        $contact = factory('App\Contact')->create(['first_name' => 'FirstName']);
+        $contact = factory(\App\Contact::class)->create(['first_name' => 'FirstName']);
         $searchResults = $contact->search($contact->first_name, $contact->account_id);
 
         $this->assertTrue($searchResults->contains($contact));
@@ -30,7 +30,7 @@ class SearchTest extends TestCase
     /** @test */
     public function testSearchContactsThroughMiddleNameAndResultContainsContact()
     {
-        $contact = factory('App\Contact')->create(['middle_name' => 'MiddleName']);
+        $contact = factory(\App\Contact::class)->create(['middle_name' => 'MiddleName']);
         $searchResults = $contact->search($contact->middle_name, $contact->account_id);
 
         $this->assertTrue($searchResults->contains($contact));

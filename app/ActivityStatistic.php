@@ -13,7 +13,7 @@ class ActivityStatistic extends Model
      */
     public function account()
     {
-        return $this->belongsTo('App\Account');
+        return $this->belongsTo(\App\Account::class);
     }
 
     /**
@@ -21,6 +21,6 @@ class ActivityStatistic extends Model
      */
     public function contact()
     {
-        return $this->belongsTo('App\Contact');
+        return $this->belongsTo(\App\Contact::class);
     }
 }
