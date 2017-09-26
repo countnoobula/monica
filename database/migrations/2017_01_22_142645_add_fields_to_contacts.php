@@ -22,7 +22,10 @@ class AddFieldsToContacts extends Migration
 
         Schema::table('contacts', function (Blueprint $table) {
             $table->dropColumn(
-                'entity_id', 'people_id', 'twitter_id', 'instagram_id'
+                'entity_id',
+                'people_id',
+                'twitter_id',
+                'instagram_id'
             );
         });
 
@@ -32,7 +35,8 @@ class AddFieldsToContacts extends Migration
 
         Schema::table('activities', function (Blueprint $table) {
             $table->dropColumn(
-                'people_id', 'user_id_of_the_writer'
+                'people_id',
+                'user_id_of_the_writer'
             );
         });
     }
@@ -46,7 +50,10 @@ class AddFieldsToContacts extends Migration
     {
         Schema::table('contacts', function (Blueprint $table) {
             $table->dropColumn(
-                'has_kids', 'number_of_kids', 'last_talked_to', 'number_of_reminders'
+                'has_kids',
+                'number_of_kids',
+                'last_talked_to',
+                'number_of_reminders'
             );
         });
 

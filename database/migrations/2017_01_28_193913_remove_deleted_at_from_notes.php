@@ -15,7 +15,11 @@ class RemoveDeletedAtFromNotes extends Migration
     {
         Schema::table('notes', function (Blueprint $table) {
             $table->dropColumn(
-                'deleted_at', 'title', 'activity_date', 'remind_for_next_call_or_email', 'author_id'
+                'deleted_at',
+                'title',
+                'activity_date',
+                'remind_for_next_call_or_email',
+                'author_id'
             );
         });
     }

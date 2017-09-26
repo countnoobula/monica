@@ -20,7 +20,12 @@ class DashboardController extends Controller
     {
         $account = Auth::user()->account()
             ->withCount(
-                'contacts', 'reminders', 'notes', 'activities', 'gifts', 'tasks'
+                'contacts',
+                'reminders',
+                'notes',
+                'activities',
+                'gifts',
+                'tasks'
             )->with('debts.contact')
             ->first();
 

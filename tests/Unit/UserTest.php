@@ -16,8 +16,8 @@ class UserTest extends TestCase
         $user->contacts_sort_order = 'firstnameAZ';
 
         $this->assertEquals(
-          $user->contacts_sort_order == 'lastnameAZ',
-          $user->updateContactViewPreference('lastnameAZ')
+            $user->contacts_sort_order == 'lastnameAZ',
+            $user->updateContactViewPreference('lastnameAZ')
         );
     }
 
@@ -29,13 +29,15 @@ class UserTest extends TestCase
         $user->name_order = 'firstname_first';
 
         $this->assertEquals(
-          $user->name, 'John Doe'
+            $user->name,
+            'John Doe'
         );
 
         $user->name_order = 'lastname_first';
 
         $this->assertEquals(
-          $user->name, 'Doe John'
+            $user->name,
+            'Doe John'
         );
     }
 }

@@ -29,7 +29,8 @@ abstract class DuskTestCase extends BaseTestCase
     protected function driver()
     {
         return RemoteWebDriver::create(
-            'http://localhost:9515', DesiredCapabilities::chrome()
+            'http://localhost:9515',
+            DesiredCapabilities::chrome()
         );
     }
 
@@ -43,7 +44,7 @@ abstract class DuskTestCase extends BaseTestCase
     public function signIn($user = null)
     {
         if (is_null($user)) {
-            $user = factory('App\User')->create();
+            $user = factory(\App\User::class)->create();
         }
 
         $this->be($user);

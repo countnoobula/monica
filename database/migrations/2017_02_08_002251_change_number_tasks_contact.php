@@ -34,7 +34,8 @@ class ChangeNumberTasksContact extends Migration
     {
         Schema::table('contacts', function (Blueprint $table) {
             $table->dropColumn(
-                'number_of_tasks_completed', 'number_of_gifts_offered'
+                'number_of_tasks_completed',
+                'number_of_gifts_offered'
             );
         });
 

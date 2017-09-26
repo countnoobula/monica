@@ -18,7 +18,9 @@ class ChangeContactsTable extends Migration
             $table->boolean('is_significant_other')->after('gender')->default(0);
             $table->boolean('is_kid')->after('is_significant_other')->default(0);
             $table->dropColumn(
-                'has_kids', 'number_of_kids', 'nature_of_relationship'
+                'has_kids',
+                'number_of_kids',
+                'nature_of_relationship'
             );
         });
 

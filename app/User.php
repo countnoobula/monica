@@ -40,7 +40,7 @@ class User extends Authenticatable
      */
     public function account()
     {
-        return $this->belongsTo('App\Account');
+        return $this->belongsTo(\App\Account::class);
     }
 
     /**

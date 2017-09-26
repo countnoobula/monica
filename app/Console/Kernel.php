@@ -14,14 +14,14 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         // Commands\Inspire::class,
-        'App\Console\Commands\ResetTestDB',
-        'App\Console\Commands\SendNotifications',
-        'App\Console\Commands\CalculateStatistics',
-        'App\Console\Commands\ImportCSV',
-        'App\Console\Commands\SetupProduction',
-        'App\Console\Commands\ImportVCards',
-        'App\Console\Commands\PingVersionServer',
-        'App\Console\Commands\FixRemindersNotSent',
+        \App\Console\Commands\ResetTestDB::class,
+        \App\Console\Commands\SendNotifications::class,
+        \App\Console\Commands\CalculateStatistics::class,
+        \App\Console\Commands\ImportCSV::class,
+        \App\Console\Commands\SetupProduction::class,
+        \App\Console\Commands\ImportVCards::class,
+        \App\Console\Commands\PingVersionServer::class,
+        \App\Console\Commands\FixRemindersNotSent::class,
     ];
 
     /**

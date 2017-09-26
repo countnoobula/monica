@@ -95,7 +95,7 @@ class Contact extends Model
      */
     public function account()
     {
-        return $this->belongsTo('App\Account');
+        return $this->belongsTo(\App\Account::class);
     }
 
     /**
@@ -105,7 +105,7 @@ class Contact extends Model
      */
     public function activities()
     {
-        return $this->hasMany('App\Activity')->orderBy('date_it_happened', 'desc');
+        return $this->hasMany(\App\Activity::class)->orderBy('date_it_happened', 'desc');
     }
 
     /**
@@ -115,7 +115,7 @@ class Contact extends Model
      */
     public function activityStatistics()
     {
-        return $this->hasMany('App\ActivityStatistic');
+        return $this->hasMany(\App\ActivityStatistic::class);
     }
 
     /**
@@ -125,7 +125,7 @@ class Contact extends Model
      */
     public function country()
     {
-        return $this->belongsTo('App\Country');
+        return $this->belongsTo(\App\Country::class);
     }
 
     /**
@@ -135,7 +135,7 @@ class Contact extends Model
      */
     public function debts()
     {
-        return $this->hasMany('App\Debt');
+        return $this->hasMany(\App\Debt::class);
     }
 
     /**
@@ -145,7 +145,7 @@ class Contact extends Model
      */
     public function gifts()
     {
-        return $this->hasMany('App\Gift');
+        return $this->hasMany(\App\Gift::class);
     }
 
     /**
@@ -155,7 +155,7 @@ class Contact extends Model
      */
     public function events()
     {
-        return $this->hasMany('App\Event')->orderBy('created_at', 'desc');
+        return $this->hasMany(\App\Event::class)->orderBy('created_at', 'desc');
     }
 
     /**
@@ -165,7 +165,7 @@ class Contact extends Model
      */
     public function notes()
     {
-        return $this->hasMany('App\Note');
+        return $this->hasMany(\App\Note::class);
     }
 
     /**
@@ -175,7 +175,7 @@ class Contact extends Model
      */
     public function reminders()
     {
-        return $this->hasMany('App\Reminder')->orderBy('next_expected_date', 'asc');
+        return $this->hasMany(\App\Reminder::class)->orderBy('next_expected_date', 'asc');
     }
 
     /**
@@ -185,7 +185,7 @@ class Contact extends Model
      */
     public function tasks()
     {
-        return $this->hasMany('App\Task');
+        return $this->hasMany(\App\Task::class);
     }
 
     /**
@@ -195,7 +195,7 @@ class Contact extends Model
      */
     public function tags()
     {
-        return $this->belongsToMany('App\Tag')->withPivot('account_id')->withTimestamps();
+        return $this->belongsToMany(\App\Tag::class)->withPivot('account_id')->withTimestamps();
     }
 
     /**
@@ -205,7 +205,7 @@ class Contact extends Model
      */
     public function calls()
     {
-        return $this->hasMany('App\Call')->orderBy('called_at', 'desc');
+        return $this->hasMany(\App\Call::class)->orderBy('called_at', 'desc');
     }
 
     /**
@@ -215,7 +215,7 @@ class Contact extends Model
      */
     public function entries()
     {
-        return $this->hasMany('App\Entry');
+        return $this->hasMany(\App\Entry::class);
     }
 
     /**
@@ -225,7 +225,7 @@ class Contact extends Model
      */
     public function activeRelationships()
     {
-        return $this->hasMany('App\Relationship', 'contact_id')->where('is_active', 1);
+        return $this->hasMany(\App\Relationship::class, 'contact_id')->where('is_active', 1);
     }
 
     /**
@@ -235,7 +235,7 @@ class Contact extends Model
      */
     public function offsprings()
     {
-        return $this->hasMany('App\Offspring', 'is_the_child_of');
+        return $this->hasMany(\App\Offspring::class, 'is_the_child_of');
     }
 
     /**
@@ -245,7 +245,7 @@ class Contact extends Model
      */
     public function progenitors()
     {
-        return $this->hasMany('App\Progenitor', 'is_the_parent_of');
+        return $this->hasMany(\App\Progenitor::class, 'is_the_parent_of');
     }
 
     /**

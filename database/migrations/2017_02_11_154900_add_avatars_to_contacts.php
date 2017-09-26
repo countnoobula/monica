@@ -28,7 +28,8 @@ class AddAvatarsToContacts extends Migration
     {
         Schema::table('contacts', function (Blueprint $table) {
             $table->dropColumn(
-                'has_avatar', 'avatar_file_name'
+                'has_avatar',
+                'avatar_file_name'
             );
         });
     }

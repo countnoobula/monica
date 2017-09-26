@@ -15,7 +15,8 @@ class ChangeTasksTable extends Migration
     {
         Schema::table('tasks', function (Blueprint $table) {
             $table->dropColumn(
-                'people_id', 'deleted_at'
+                'people_id',
+                'deleted_at'
             );
         });
 

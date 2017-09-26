@@ -19,7 +19,6 @@ class CheckVersion
         $instance = Instance::first();
 
         if ($instance->latest_version == config('monica.app_version')) {
-
             // The instance has been updated to the latest version. We reset
             // the ping data.
 

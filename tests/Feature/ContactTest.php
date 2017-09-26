@@ -62,9 +62,11 @@ class ContactTest extends FeatureTestCase
         $body = $this->faker->paragraph();
 
         $this->post(
-            route('people.notes.store', $contact), [
+            route('people.notes.store', $contact),
+            [
             'body' => $body,
-        ]);
+            ]
+        );
 
         $this->assertDatabaseHas('notes', [
             'contact_id' => $contact->id,
@@ -191,11 +193,13 @@ class ContactTest extends FeatureTestCase
             $debt
         );
 
-        $this->assertDatabaseHas('debts',
+        $this->assertDatabaseHas(
+            'debts',
             $debt + [
                 'contact_id' => $contact->id,
                 'account_id' => $user->account_id,
-            ]);
+            ]
+        );
     }
 
     public function test_user_can_be_owed_debt_by_a_contact()
@@ -213,11 +217,13 @@ class ContactTest extends FeatureTestCase
             $debt
         );
 
-        $this->assertDatabaseHas('debts',
+        $this->assertDatabaseHas(
+            'debts',
             $debt + [
                 'contact_id' => $contact->id,
                 'account_id' => $user->account_id,
-            ]);
+            ]
+        );
     }
 
     public function test_a_contact_can_have_food_preferences()
